@@ -13,14 +13,17 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    Timer(const Duration(seconds: 3), () async {
-      await Navigator.push(
-        context,
-        MaterialPageRoute(
-          builder: (context) => const SignUpScreen(),
-        ),
-      );
-    });
+    Timer(
+      const Duration(seconds: 3),
+      () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const SignUpScreen(),
+          ),
+        );
+      },
+    );
   }
 
   @override
@@ -32,7 +35,13 @@ class _SplashScreenState extends State<SplashScreen> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: const [
           Center(
-            child: Text('Shared Preference'),
+            child: Text(
+              'Shared Preferences',
+              style: TextStyle(
+                  fontSize: 25,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white),
+            ),
           )
         ],
       ),
