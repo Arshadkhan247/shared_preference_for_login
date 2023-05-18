@@ -44,10 +44,10 @@ class _TeacherScreenState extends State<TeacherScreen> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Column(
+            const Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: const [
+              children: [
                 Text('Name :\n'),
                 Text('Email :\n'),
                 Text('Password :\n'),

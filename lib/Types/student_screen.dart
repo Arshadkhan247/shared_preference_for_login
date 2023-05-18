@@ -47,10 +47,10 @@ class _StudentScreenState extends State<StudentScreen> {
             child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Column(
+                  const Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    children: const [
+                    children: [
                       Text('Email :\n'),
                       Text('Password :\n'),
                       Text('Age :\n'),
