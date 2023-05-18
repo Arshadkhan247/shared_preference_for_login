@@ -53,7 +53,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               height: 30,
             ),
             TextFormField(
-              keyboardType: TextInputType.text,
+              keyboardType: TextInputType.visiblePassword,
               controller: passController,
               decoration: const InputDecoration(
                 hintText: 'Password',
