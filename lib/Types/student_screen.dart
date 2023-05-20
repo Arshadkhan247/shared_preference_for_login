@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:shared_preference_for_login/components/button.dart';
 
 class StudentScreen extends StatefulWidget {
   const StudentScreen({super.key});
@@ -37,39 +38,44 @@ class _StudentScreenState extends State<StudentScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
         title: const Text('Student Screen'),
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(40.0),
-            child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      body: Padding(
+        padding: const EdgeInsets.all(40.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
+              const Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text('Email :\n'),
-                      Text('Password :\n'),
-                      Text('Age :\n'),
-                      Text('userType :\n'),
-                    ],
-                  ),
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: [
-                      Text('${email.toString()}\n'),
-                      Text('${password.toString()}\n'),
-                      Text('${age.toString()}\n'),
-                      Text('${userType.toString().toUpperCase()}\n'),
-                    ],
-                  )
-                ]),
-          ),
-        ],
+                  Text('Name :\n'),
+                  Text('Email :\n'),
+                  Text('Password :\n'),
+                  Text('Age :\n'),
+                  Text('userType :\n'),
+                ],
+              ),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  Text('${name.toString()}\n'),
+                  Text('${email.toString()}\n'),
+                  Text('${password.toString()}\n'),
+                  Text('${age.toString()}\n'),
+                  Text('${userType.toString().toUpperCase()}\n'),
+                ],
+              )
+            ]),
+            const SizedBox(
+              height: 50,
+            ),
+            const ButtonWidget(),
+          ],
+        ),
       ),
     );
   }

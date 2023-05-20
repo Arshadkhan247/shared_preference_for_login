@@ -1,7 +1,5 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
-import 'package:shared_preference_for_login/Page/home_page.dart';
 import 'package:shared_preference_for_login/Page/sign_up_screen.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -18,30 +16,10 @@ class _SplashScreenState extends State<SplashScreen> {
     Timer(
       const Duration(seconds: 3),
       () {
-        isLogin();
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => const SignUpScreen()));
       },
     );
-  }
-
-  void isLogin() async {
-    SharedPreferences sp = await SharedPreferences.getInstance();
-
-    bool login;
-    login = sp.getBool('isLogin') ?? false;
-
-    if (login) {
-      // ignore: use_build_context_synchronously
-      Navigator.of(context).pushReplacement(
-        MaterialPageRoute(
-          builder: (context) => const HomePage(),
-        ),
-      );
-    } else {
-      // ignore: use_build_context_synchronously
-      Navigator.of(context).pushReplacement(MaterialPageRoute(
-        builder: (context) => const SignUpScreen(),
-      ));
-    }
   }
 
   @override

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:shared_preference_for_login/components/button.dart';
 
 class TeacherScreen extends StatefulWidget {
   const TeacherScreen({super.key});
@@ -37,35 +38,45 @@ class _TeacherScreenState extends State<TeacherScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
         title: const Text('Teacher Screen'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(40.0),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.start,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text('Name :\n'),
-                Text('Email :\n'),
-                Text('Password :\n'),
-                Text('Age :\n'),
-                Text('userType :\n'),
+                const Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text('Name :\n'),
+                    Text('Email :\n'),
+                    Text('Password :\n'),
+                    Text('Age :\n'),
+                    Text('userType :\n'),
+                  ],
+                ),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    Text('$name\n'),
+                    Text('${email.toString()}\n'),
+                    Text('${password.toString()}\n'),
+                    Text('${age.toString()}\n'),
+                    Text('${usertype.toString().toUpperCase()}\n'),
+                  ],
+                )
               ],
             ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children: [
-                Text('$name\n'),
-                Text('${email.toString()}\n'),
-                Text('${password.toString()}\n'),
-                Text('${age.toString()}\n'),
-                Text('${usertype.toString().toUpperCase()}\n'),
-              ],
-            )
+            const SizedBox(
+              height: 50,
+            ),
+            const ButtonWidget(),
           ],
         ),
       ),

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:shared_preference_for_login/Page/home_page.dart';
 import 'package:shared_preference_for_login/Page/splash_screen.dart';
+import 'package:shared_preference_for_login/Types/admin_screen.dart';
 import 'package:shared_preference_for_login/Page/sign_up_screen.dart';
+import 'package:shared_preference_for_login/Types/student_screen.dart';
+import 'package:shared_preference_for_login/Types/teacher_screen.dart';
 
 void main(List<String> args) {
   runApp(const MyApp());
@@ -21,7 +23,9 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (BuildContext context) => const SplashScreen(),
         'signup': (context) => const SignUpScreen(),
-        '/home': (context) => const HomePage()
+        '/teacherscreen': (context) => const TeacherScreen(),
+        '/studentscreen': (context) => const StudentScreen(),
+        '/adminscreen': (context) => const AdminScreen(),
       },
     );
   }
